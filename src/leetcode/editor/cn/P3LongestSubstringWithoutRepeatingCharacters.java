@@ -73,7 +73,7 @@ public class P3LongestSubstringWithoutRepeatingCharacters {
                 if (map.containsKey(ch)) {
                     start = Math.max(map.get(ch), start);
                 }
-                ans =Math.max(ans, end - start + 1);
+                ans = Math.max(ans, end - start + 1);
                 map.put(ch, end + 1);
             }
             return ans;
