@@ -63,9 +63,39 @@ class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = null, tail = null;
         int carry = 0;
+        while (l1 != null || l2 != null) {
+            int v1 = l1 != null ? l1.val : 0;
+            int v2 = l2 != null ? l2.val : 0;
+            int sum = v1 + v2 + carry;
+        /*    if (sum > 10) {
+                carry = v1 + v2 % 10;
+                ans.next = new ListNode(carry);
 
-
-        return null;
+            } else {
+                carry = v1 + v2;
+                ans.next = new ListNode(carry);
+            }*/
+            if (head == null) {
+                head = tail = new ListNode(sum % 10);
+            }
+            else {
+                tail.next = new ListNode(sum % 10);
+                tail = tail.next;
+            }
+            //记录进位
+            carry = sum / 10;
+            if (l1 != null) {
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+        }
+        if (carry > 0) {
+            tail.next = new ListNode(carry);
+        }
+        //返回头结点
+        return head;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
