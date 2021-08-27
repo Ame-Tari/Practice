@@ -58,12 +58,14 @@ public class P7ReverseInteger {
         public int reverse(int x) {
             int rev = 0;
             while (x != 0) {
-                if (x < Integer.MIN_VALUE / 10 || x > Integer.MAX_VALUE / 10) {
-                    //取个位的数值
-                    int temp = x % 10;
-                    x /= 10;
-                    rev = rev * 10 + temp;
+                if (rev < Integer.MIN_VALUE / 10 || rev > Integer.MAX_VALUE / 10) {
+                    return 0;
                 }
+                //取个位的数值
+                int temp = x % 10;
+                x /= 10;
+                //尾数为0 加上个位数数值
+                rev = rev * 10 + temp;
             }
             return rev;
         }
