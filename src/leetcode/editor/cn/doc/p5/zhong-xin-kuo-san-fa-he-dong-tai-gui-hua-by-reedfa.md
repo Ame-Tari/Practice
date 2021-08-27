@@ -11,9 +11,9 @@
 
 
 
-
 每个位置向两边扩散都会出现一个窗口大小（`len`）。如果 `len>maxLen`(用来表示最长回文串的长度）。则更新 `maxLen` 的值。
 因为我们最后要返回的是具体子串，而不是长度，因此，还需要记录一下 `maxLen` 时的起始位置（`maxStart`），即此时还要 `maxStart=len`。
+
 #### 代码：
 ```Java [  ]
 public String longestPalindrome1(String s) {
@@ -60,6 +60,7 @@ public String longestPalindrome1(String s) {
 进入正题，动态规划关键是找到初始状态和状态转移方程。
 初始状态，`l=r` 时，此时 `dp[l][r]=true`。
 状态转移方程，`dp[l][r]=true` 并且(`l-1`)和（`r+1`)两个位置为相同的字符，此时 `dp[l-1][r+1]=true`。
+
 #### 代码：
 ```Java [ ]
 public String longestPalindrome(String s) {
