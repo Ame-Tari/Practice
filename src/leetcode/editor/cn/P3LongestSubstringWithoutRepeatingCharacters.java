@@ -43,13 +43,20 @@
 // s 由英文字母、数字、符号和空格组成
 //
 // Related Topics 哈希表 字符串 滑动窗口
-// 👍 5996 👎 0
+// 👍 6004 👎 0
 
 
 package leetcode.editor.cn;
 //Java：无重复字符的最长子串
 
-public class P3LongestSubstringWithoutRepeatingCharacters{
+import sun.rmi.transport.proxy.CGIHandler;
+
+import java.util.HashMap;
+
+/**
+ * @author huangmingtao
+ */
+public class P3LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
         Solution solution = new P3LongestSubstringWithoutRepeatingCharacters().new Solution();
         // TO TEST
@@ -57,11 +64,21 @@ public class P3LongestSubstringWithoutRepeatingCharacters{
 
     //leetcode submit region begin(Prohibit modification and deletion)
 
-class Solution {
-    public int lengthOfLongestSubstring(String s) {
-        return 0;
+    class Solution {
+        public int lengthOfLongestSubstring(String s) {
+            HashMap<Character, Integer> map = new HashMap<>();
+            int ans = 0;
+            for (int start = 0, end = 0; end < s.length(); end++) {
+                char ch = s.charAt(end);
+                if (map.containsKey(ch)) {
+                    start = Math.max(map.get(ch), start);
+                }
+                ans = Math.max(ans, end - start + 1);
+                map.put(ch, end + 1);
+            }
+            return ans;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
