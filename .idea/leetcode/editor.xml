@@ -3,11 +3,20 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$PROJECT_DIR$/src/leetcode/editor/cn/ContainerWithMostWater.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/ContainerWithMostWater.md" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/editor/cn/ContainerWithMostWater.java" />
+              <option name="questionId" value="11" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/leetcode/editor/cn/P11ContainerWithMostWater.java">
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/ContainerWithMostWater.md" />
-              <option name="path" value="$PROJECT_DIR$/src/leetcode/editor/cn/P11ContainerWithMostWater.java" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/editor/cn/ContainerWithMostWater.java" />
               <option name="questionId" value="11" />
             </LeetcodeEditor>
           </value>
@@ -57,6 +66,15 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/src/leetcode/editor/cn/P8StringToIntegerAtoi.java" />
               <option name="questionId" value="8" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/editor/cn/ThreeSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/ThreeSum.md" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/editor/cn/ThreeSum.java" />
+              <option name="questionId" value="15" />
             </LeetcodeEditor>
           </value>
         </entry>
