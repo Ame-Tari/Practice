@@ -27,8 +27,8 @@ package leetcode.editor.cn;
  * @author huangmingtao
  */
 public class P5LongestPalindromicSubstring {
-    public void main(String[] args) {
-        Solution solution = new Solution();
+    public static void main(String[] args) {
+        Solution solution = new P5LongestPalindromicSubstring().new Solution();
         String s = solution.longestPalindrome("2313123131314141");
         System.out.println(s);
         // TO TEST
