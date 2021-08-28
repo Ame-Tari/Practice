@@ -27,7 +27,7 @@ public class P15ThreeSum {
         Solution solution = new P15ThreeSum().new Solution();
         // TO TEST
     }
-    
+
     //leetcode submit region begin(Prohibit modification and deletion)
 
 class Solution {
@@ -36,8 +36,6 @@ class Solution {
         //排序
         Arrays.sort(nums);
         //双指针
-
-
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] > 0) {
                 return arrayLists;
