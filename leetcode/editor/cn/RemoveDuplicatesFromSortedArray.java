@@ -77,18 +77,14 @@ public class RemoveDuplicatesFromSortedArray {
 
     class Solution {
         public int removeDuplicates(int[] nums) {
-            int[] solve = new int[nums.length];
             int temp = 0;
-            solve[temp] = nums[0];
             for (int i = 1; i < nums.length; i++) {
-                if (nums[i] > solve[temp]) {
+                if (nums[i] > nums[temp]) {
                     temp++;
-                    solve[temp] = nums[i];
+                    nums[temp] = nums[i];
                 }
             }
-            int len = nums.length - solve.length;
-            nums = solve;
-            return len;
+            return temp + 1;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
