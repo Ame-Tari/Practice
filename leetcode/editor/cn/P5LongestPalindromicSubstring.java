@@ -1,8 +1,8 @@
 /**
- * 题目Id：5
- * 题目：最长回文子串
- * 日期：2022-07-16 13:09:25
- */
+  * 题目Id：5
+  * 题目：最长回文子串
+  * 日期：2022-07-17 00:40:23
+*/
 //给你一个字符串 s，找到 s 中最长的回文子串。 
 //
 // 
@@ -33,51 +33,38 @@
 // Related Topics 字符串 动态规划 👍 5460 👎 0
 
 package cn;
-
 public class P5LongestPalindromicSubstring {
     public static void main(String[] args) {
         Solution solution = new P5LongestPalindromicSubstring().new Solution();
     }
-
-    //leetcode submit region begin(Prohibit modification and deletion)
-    class Solution {
-        public String longestPalindrome(String s) {
-            int strLen = s.length();
-            int left = 0;
-            int right = 0;
-            int len = 1;
-            int maxStart = 0;
-            int maxLen = 0;
-            if (s.length() == 0) {
-                return "";
-            }
-            String result = "";
-            for (int i = 0; i < strLen; i++) {
-                left = i - 1;
-                right = i + 1;
-                while (left >= 0 && s.charAt(left) == s.charAt(i)) {
-                    len++;
-                    left--;
-                }
-
-                while (right < strLen && s.charAt(right) == s.charAt(i)) {
-                    len++;
-                    right++;
-                }
-                while (left >= 0 && right < strLen && s.charAt(right) == s.charAt(left)) {
-                    len = len + 2;
-                    left--;
-                    right++;
-                }
-                if (len > maxLen) {
-                    maxLen = len;
-                    maxStart = left;
-                }
-                len = 1;
-            }
-            return s.substring(maxStart + 1, maxStart + maxLen + 1);
+        //leetcode submit region begin(Prohibit modification and deletion)
+class Solution {
+    public String longestPalindrome(String s) {
+        if (s == null || s.length() < 2) {
+            return s;
         }
+        int strLen = s.length();
+        int maxStart = 0;
+        int maxEnd = 0;
+        int maxLen = 1;
+
+        boolean[][] dp = new boolean[strLen][strLen];
+        for (int r = 1; r < strLen; r++) {
+            for (int l = 0; l < r; l++) {
+                if (s.charAt(l) == s.charAt(r) && (r - l <= 2 || dp[l + 1][r - 1])) {
+                    dp[l][r] = true;
+                    if (r - l + 1 > maxLen) {
+                        maxLen = r - l + 1;
+                        maxStart = l;
+                        maxEnd = r;
+                    }
+                }
+
+            }
+        }
+        return s.substring(maxStart, maxEnd + 1);
     }
+}
 //leetcode submit region end(Prohibit modification and deletion)
 
 } 
